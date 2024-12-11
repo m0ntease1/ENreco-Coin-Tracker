@@ -86,7 +86,8 @@
                 xAxis: {
                     type: 'time',   
                     axisLabel: {
-                        formatter: getGlobalTimeFormat
+                        fontSize: 10,
+                        formatter: getGlobalTimeFormat,
                     },
                 },
                 yAxis: {
@@ -270,7 +271,7 @@
 
             function getGlobalTimeFormat(value: string) {
                 const [hours, minutes, seconds] = getHourMinSecFromGraphTimestamp(Number(value))
-                const time: string = `${hours}:${minutes}:${seconds}`;
+                const time: string = `${hours}:${minutes}`; //:${seconds}`;
                 return time;
             }
 
