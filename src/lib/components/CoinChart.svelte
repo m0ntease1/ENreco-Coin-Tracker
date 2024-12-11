@@ -409,7 +409,7 @@
 
     @media (max-width: 460px) {
         #chart {
-            width: 400px;
+            width: 360px;
             height: 300px;
         }
     }
