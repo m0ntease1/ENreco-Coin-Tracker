@@ -38,18 +38,25 @@
             document.getElementById(idd)!.style.filter=`grayscale(${grayscaleValue}) brightness(${brightnessValue}%)`;
         })
 
+
+    const mobileScreenQuery = window.matchMedia("(max-width: 480px")
     const smallScreenQuery = window.matchMedia("(max-width: 768px)")
     const mediumScreenQuery = window.matchMedia("(min-width: 769px) and (max-width: 1274px)")
 
     function updateIframeWidth() {
-            if (smallScreenQuery.matches) {
+            if (mobileScreenQuery.matches) {
+                mcHeadWidth = 28
+                mcHeadHeight = 28
+                mcHeadScale = 3
+            }
+            else if (smallScreenQuery.matches) {
                 mcHeadWidth = 44
                 mcHeadHeight = 44
                 mcHeadScale = 5
             } else if (mediumScreenQuery.matches) {
-                mcHeadWidth = 60
-                mcHeadHeight = 60
-                mcHeadScale = 7
+                mcHeadWidth = 52
+                mcHeadHeight = 52
+                mcHeadScale = 6
             } else {
                 mcHeadWidth = 84
                 mcHeadHeight = 84
@@ -59,10 +66,12 @@
 
         updateIframeWidth();
 
+        mobileScreenQuery.addEventListener("change", updateIframeWidth);
         smallScreenQuery.addEventListener("change", updateIframeWidth);
         mediumScreenQuery.addEventListener("change", updateIframeWidth);
 
         return () => {
+            mobileScreenQuery.removeEventListener("change", updateIframeWidth);
             smallScreenQuery.removeEventListener("change", updateIframeWidth);
             mediumScreenQuery.removeEventListener("change", updateIframeWidth);
         };
@@ -93,6 +102,12 @@
     @media (max-width: 768px) {
         .memberName {
             font-size: 8pt;
+        }
+    }
+
+    @media (max-width: 460px) {
+        .memberName {
+            font-size: 6pt;
         }
     }
 

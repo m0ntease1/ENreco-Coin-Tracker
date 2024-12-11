@@ -395,12 +395,19 @@
     
     @media (max-width: 1274px) {
         #chart {
-            width: 500px;
-            height: 375px;
+            width: 600px;
+            height: 400px;
         }
     }
 
     @media (max-width: 768px) {
+        #chart {
+            width: 500px;
+            height: 400px;
+        }
+    }
+
+    @media (max-width: 460px) {
         #chart {
             width: 400px;
             height: 300px;

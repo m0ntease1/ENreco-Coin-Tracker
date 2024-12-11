@@ -96,7 +96,7 @@
         display: flex;
     }
 
-    .allNoneGenGuildButtonGroupContainer {
+    .allNoneAndOrderByGenGuildButtonGroupContainer {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: 1px 5px;
@@ -107,7 +107,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1px 5px;
-        margin-right: 10px;
+        margin-right: 8px;
     }
 
     .allOrNoneButtonPressed {
@@ -122,22 +122,43 @@
         color: #9dbd9e;
     }
 
+    .btn {
+        white-space: normal;
+    }
+
     @media (max-width: 1274px) {
         .btn {
             font-size: 12pt;
+            padding: 3px 6px;
         }
     }
 
     @media (max-width: 768px) {
         .btn {
             font-size: 7pt;
+            padding: 3px 6px;
+        }
+        
+        .allNoneAndOrderByGenGuildButtonGroupContainer {
+            margin-right: 5px;
+        }
+
+        .genAndGuildButtonGroupContainer {
+            margin-right: 5px;
+        }
+    }
+
+    @media (max-width: 460px) {
+        .btn {
+            font-size: 7pt;
+            padding: 1px 4px;
         }
     }
 </style>
 
 
 <div id="allButtonContainer">
-    <div class="allNoneGenGuildButtonGroupContainer">
+    <div class="allNoneAndOrderByGenGuildButtonGroupContainer">
         <button type="button" class="btn btn-secondary" class:allOrNoneButtonPressed={$isAllSelected} on:click={AllSelect}>
             All
         </button>
@@ -146,7 +167,7 @@
         </button>
     </div>
 
-    <div class="allNoneGenGuildButtonGroupContainer">
+    <div class="allNoneAndOrderByGenGuildButtonGroupContainer">
         <button type="button" class="btn btn-secondary" class:orderByGenOrGuildButtonPressed={$isOrderedByGen} on:click={OrderByGen}>
             Order by Gen
         </button>

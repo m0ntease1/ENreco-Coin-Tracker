@@ -54,6 +54,7 @@
   @media (max-width: 768px) {
     #allContainer {
       flex-direction: column;
+      align-items: center;
     }
   }
 </style>

@@ -27,12 +27,17 @@
                 iFrame.src = newVideoURL 
         })
 
-
-    const smallScreenQuery = window.matchMedia("(max-width: 768px)")
+    
+    const mobileScreenQuery = window.matchMedia("(max-width: 480px")
+    const smallScreenQuery = window.matchMedia("(min-width: 481px) and (max-width: 768px)")
     const mediumScreenQuery = window.matchMedia("(min-width: 769px) and (max-width: 1274px)")
 
     function updateIframeWidth() {
-            if (smallScreenQuery.matches) {
+            if (mobileScreenQuery.matches) {
+                iFrameWidth = 281
+                iFrameHeight = 158  
+            }
+            else if (smallScreenQuery.matches) {
                 iFrameWidth = 424
                 iFrameHeight = 238  
             } else if (mediumScreenQuery.matches) {
@@ -46,10 +51,12 @@
 
         updateIframeWidth();
 
+        mobileScreenQuery.addEventListener("change", updateIframeWidth);
         smallScreenQuery.addEventListener("change", updateIframeWidth);
         mediumScreenQuery.addEventListener("change", updateIframeWidth);
 
         return () => {
+            mobileScreenQuery.removeEventListener("change", updateIframeWidth);
             smallScreenQuery.removeEventListener("change", updateIframeWidth);
             mediumScreenQuery.removeEventListener("change", updateIframeWidth);
         };
@@ -95,6 +102,16 @@
     @media (max-width: 768px) {
         .IFrameContainer {
             margin-top: 1%;
+        }
+    }
+
+    @media (max-width: 460px) {
+        .IFrameContainer {
+            margin-top: 1%;
+        }
+
+        .emptyIFrameTextContainer {
+            font-size: 10pt;
         }
     }
 </style>
