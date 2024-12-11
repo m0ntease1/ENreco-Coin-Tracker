@@ -7,12 +7,6 @@
 
 
 <style>
-  :global(body) {
-    width: 100vw;
-    height: 100vh;
-    background-color: #181a1b;
-  }
-
   #allContainer {
     display: flex;
     justify-content: space-around;
