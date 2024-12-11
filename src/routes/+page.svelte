@@ -8,10 +8,6 @@
 
 <style>
   :global(body) {
-    margin: 0px;
-  }
-
-  #background {
     width: 100vw;
     height: 100vh;
     background-color: #181a1b;
@@ -76,28 +72,26 @@
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </svelte:head>
 
-<div id="background">
-  <p id="affiliationDisclaimer">
-      Not affiliated with hololive, this is an unofficial fansite
-  </p>
-  <h1 id="coinChangesTitle">
-    ENreco Coin Tracker
-  </h1>
-  <div id="allContainer">
-    <div id="chartAndButtonsContainer">
-      <CoinChart />
-      <div>
-        <ToggleGenCheckboxes />
-      </div>
-      <McHeadsContainer />
+<p id="affiliationDisclaimer">
+    Not affiliated with hololive, this is an unofficial fansite
+</p>
+<h1 id="coinChangesTitle">
+  ENreco Coin Tracker
+</h1>
+<div id="allContainer">
+  <div id="chartAndButtonsContainer">
+    <CoinChart />
+    <div>
+      <ToggleGenCheckboxes />
     </div>
-    <div id="iFrameAndDisclaimerContainer">
-      <IFrameDisplayer />
-      <div id="iFrameDisclaimer">
-        <small>
-          Dots that are too close together may display the wrong coin value tooltip. Clicking on a dot goes to the correct stream moment guaranteed. You can scroll on the graph to get a better overview.
-        </small>
-      </div>
+    <McHeadsContainer />
+  </div>
+  <div id="iFrameAndDisclaimerContainer">
+    <IFrameDisplayer />
+    <div id="iFrameDisclaimer">
+      <small>
+        Dots that are too close together may display the wrong coin value tooltip. Clicking on a dot goes to the correct stream moment guaranteed. You can scroll on the graph to get a better overview.
+      </small>
     </div>
   </div>
 </div>
