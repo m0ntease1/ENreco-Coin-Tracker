@@ -6,7 +6,7 @@
 
     let iFrameWidth: number
     let iFrameHeight: number
-    const emptyIFrameTextContainerWidth = 500
+    const emptyIFrameTextContainerWidth = 600
     const emptyIFrameTextContainerHeight = 200
 
     let iFrame: HTMLIFrameElement
@@ -83,6 +83,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 20pt;
     }
 
     @media (max-width: 1274px) {
@@ -102,9 +103,10 @@
 {#if !$coinValueHasBeenClicked}
     <div class="IFrameContainer" style="--iFrameWidth: {iFrameWidth}px; --iFrameHeight: {iFrameHeight}px;">
         <div class="emptyIFrameTextContainer" style="--emptyIFrameTextContainerWidth: {emptyIFrameTextContainerWidth}px; --emptyIFrameTextContainerHeight: {emptyIFrameTextContainerHeight}px;">
-            <h2>
-                Click on any dot on the graph to see the corresponding stream moment
-            </h2>
+            <p>
+                The graph shows when and how somebody's coins changed during ENreco.
+                Click on any dot to see the corresponding stream moment.
+            </p>
         </div>
     </div>
 {:else}

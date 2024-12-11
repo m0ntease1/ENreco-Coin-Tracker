@@ -43,16 +43,16 @@
 
     function updateIframeWidth() {
             if (smallScreenQuery.matches) {
-                mcHeadWidth = 48
-                mcHeadHeight = 48
-                mcHeadScale = 6
+                mcHeadWidth = 44
+                mcHeadHeight = 44
+                mcHeadScale = 5
             } else if (mediumScreenQuery.matches) {
-                mcHeadWidth = 56
-                mcHeadHeight = 56
+                mcHeadWidth = 60
+                mcHeadHeight = 60
                 mcHeadScale = 7
             } else {
-                mcHeadWidth = 80
-                mcHeadHeight = 80
+                mcHeadWidth = 84
+                mcHeadHeight = 84
                 mcHeadScale = 10
             }
         }
@@ -76,11 +76,32 @@
 
 
 <style>
-    p {
+    .memberName {
         color: white;
         text-align: center;
         margin-top: 0px;
         margin-bottom: 0px;
+        font-size: 12pt;
+    }
+    
+    @media (max-width: 1274px) {
+        .memberName {
+            font-size: 10pt;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .memberName {
+            font-size: 8pt;
+        }
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    button:hover {
+        filter: brightness(85%);
     }
 </style>
 
@@ -91,7 +112,7 @@
             height: {mcHeadHeight}px;
             background: url(https://api.mineatar.io/face/{mcHeadUUID}?scale={mcHeadScale})"
         on:click={ToggleSelection} />
-    <p>
+    <p class="memberName">
         {idd}
     </p>    
 </div>

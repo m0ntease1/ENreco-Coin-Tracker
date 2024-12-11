@@ -121,6 +121,18 @@
     .genOrGuildButtonPressed {
         color: #9dbd9e;
     }
+
+    @media (max-width: 1274px) {
+        .btn {
+            font-size: 12pt;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .btn {
+            font-size: 7pt;
+        }
+    }
 </style>
 
 

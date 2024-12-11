@@ -100,18 +100,18 @@
     .mcHeadContainer {
         width: 80px;
         height: 104px;
-        margin-right: 6px;
+        margin-right: 8px;
     }
 
     @media (max-width: 1274px) {
         #mcHeadsContainer {
-            gap: 12px;
+            gap: 10px;
         }
 
         .mcHeadContainer {
             width: 56px;
             height: 80px;
-            margin-right: 4px;
+            margin-right: 6px;
         }
     }
 
@@ -121,9 +121,9 @@
         }
 
         .mcHeadContainer {
-            width: 48px;
-            height: 72px;
-            margin-right: 2px;
+            width: 40px;
+            height: 64px;
+            margin-right: 6px;
         }
     }
 </style>
