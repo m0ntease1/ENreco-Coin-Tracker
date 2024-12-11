@@ -107,7 +107,7 @@
 
     @media (max-width: 460px) {
         .memberName {
-            font-size: 6pt;
+            font-size: 5pt;
         }
     }
 
